@@ -1,0 +1,17 @@
+{
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "@currency-conversion/currency-conversion/(.*)": "<rootDir>/../libs/currency-conversion/src/$1",
+    "@currency-conversion/currency-conversion": "<rootDir>/../libs/currency-conversion/src"
+  }
+}
