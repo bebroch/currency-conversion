@@ -19,11 +19,10 @@ export class CurrencyApiService {
         currencies: CurrencyEnum,
     ): Promise<LatestType | null> {
         try {
-            return (
-                await axios(
-                    `https://api.currencyapi.com/v3/latest?apikey=${this.apiKey}&base_currency=${base_currency}&currencies=${currencies}`,
-                )
-            ).data
+            const response = await axios(
+                `https://api.currencyapi.com/v3/latest?apikey=${this.apiKey}&base_currency=${base_currency}&currencies=${currencies}`,
+            )
+            return response.data
         } catch (err) {
             return null
         }
