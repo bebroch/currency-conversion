@@ -1,26 +1,27 @@
-import { Injectable } from "@nestjs/common";
-import { CreateConversionDto } from "./dto/create-conversion.dto";
-import { UpdateConversionDto } from "./dto/update-conversion.dto";
+import { CurrencyConversionService } from "@currency-conversion/currency-conversion"
+import { CurrencyEnum } from "@currency-conversion/currency-conversion/currency-api/types/currency.enums"
+import { ConvertCurrencyType } from "@currency-conversion/currency-conversion/types/convert-currency.types"
+import { BadRequestException, Injectable, InternalServerErrorException } from "@nestjs/common"
 
 @Injectable()
 export class ConversionService {
-    create(createConversionDto: CreateConversionDto) {
-        return "This action adds a new conversion";
-    }
+    constructor(private currencyConversionService: CurrencyConversionService) {}
 
-    findAll() {
-        return `This action returns all conversion`;
-    }
+    public async conversion(
+        fromCurrency: CurrencyEnum,
+        toCurrency: CurrencyEnum,
+        count?: number,
+    ): Promise<ConvertCurrencyType> {
+        if (!fromCurrency || !toCurrency)
+            throw new BadRequestException("Invalid request. None fromCurrency or toCurrency.")
 
-    findOne(id: number) {
-        return `This action returns a #${id} conversion`;
-    }
+        const data = await this.currencyConversionService.convert(fromCurrency, toCurrency, count)
 
-    update(id: number, updateConversionDto: UpdateConversionDto) {
-        return `This action updates a #${id} conversion`;
-    }
+        if (!data)
+            throw new InternalServerErrorException(
+                "Error occurred while fetching data from external service.",
+            )
 
-    remove(id: number) {
-        return `This action removes a #${id} conversion`;
+        return data
     }
 }
