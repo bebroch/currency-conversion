@@ -1,7 +1,7 @@
+import { CurrencyEnum } from "@global-common/currency.enums"
 import { Injectable } from "@nestjs/common"
 import axios from "axios"
 import { LatestType } from "./types/currency-latest.types"
-import { CurrencyEnum } from "./types/currency.enums"
 
 @Injectable()
 export class CurrencyApiService {

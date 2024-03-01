@@ -1,4 +1,4 @@
-import { CurrencyEnum } from "../currency-api/types/currency.enums"
+import { CurrencyEnum } from "@global-common/currency.enums"
 
 export type ConvertCurrencyType = {
     fromCurrency: CurrencyEnum

@@ -1,6 +1,6 @@
 import { CurrencyConversionService } from "@currency-conversion/currency-conversion"
-import { CurrencyEnum } from "@currency-conversion/currency-conversion/currency-api/types/currency.enums"
 import { ConvertCurrencyType } from "@currency-conversion/currency-conversion/types/convert-currency.types"
+import { CurrencyEnum } from "@global-common/currency.enums"
 import { BadRequestException, Injectable, InternalServerErrorException } from "@nestjs/common"
 
 @Injectable()

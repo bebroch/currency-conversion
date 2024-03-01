@@ -1,4 +1,4 @@
-import { CurrencyEnum } from "./currency.enums"
+import { CurrencyEnum } from "@global-common/currency.enums"
 
 export type LatestType = {
     data: Record<CurrencyEnum, CurrencyType>

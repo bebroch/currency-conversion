@@ -1,6 +1,6 @@
+import { CurrencyEnum } from "@global-common/currency.enums"
 import { Injectable } from "@nestjs/common"
 import { CurrencyApiService } from "./currency-api/currency-api.service"
-import { CurrencyEnum } from "./currency-api/types/currency.enums"
 import { ConvertCurrencyType } from "./types/convert-currency.types"
 
 @Injectable()
