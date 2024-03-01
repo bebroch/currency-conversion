@@ -1,0 +1,28 @@
+.main {
+    background-color: white;
+    height: 40dvh;
+    width: 40%;
+    min-width: 30em;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 30px;
+}
+
+.title {
+    padding: 4px;
+    text-align: center;
+}
+
+.title > h1 {
+    font-family: cursive;
+    color: #00cccc;
+}
+
+.tableStyle {
+    width: 100%;
+}
+
+.tableStyle > tr > td {
+    border: "1px solid black";
+    text-align: center;
+}
