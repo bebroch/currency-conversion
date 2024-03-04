@@ -1,4 +1,4 @@
-import { CurrencyEnum } from "@global-common/currency.enums"
+import { CurrencyEnum } from "@currency-conversion/currency-conversion/apis/currency-api/enums/currency.enums"
 import { Injectable } from "@nestjs/common"
 import axios from "axios"
 import { LatestType } from "./types/currency-latest.types"
@@ -19,10 +19,11 @@ export class CurrencyApiService {
         currencies: CurrencyEnum,
     ): Promise<LatestType | null> {
         try {
-            const response = await axios(
-                `https://api.currencyapi.com/v3/latest?apikey=${this.apiKey}&base_currency=${base_currency}&currencies=${currencies}`,
-            )
-            return response.data
+            return (
+                await axios(
+                    `https://api.currencyapi.com/v3/latest?apikey=${this.apiKey}&base_currency=${base_currency}&currencies=${currencies}`,
+                )
+            ).data
         } catch (err) {
             return null
         }

@@ -1,4 +1,4 @@
-import { CurrencyEnum } from "@global-common/currency.enums"
+import { CurrencyEnum } from "@currency-conversion/currency-conversion/apis/currency-api/enums/currency.enums"
 import { Controller, Get, Query } from "@nestjs/common"
 import { ConversionService } from "./conversion.service"
 

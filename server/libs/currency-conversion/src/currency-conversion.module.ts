@@ -1,5 +1,5 @@
 import { Module } from "@nestjs/common"
-import { CurrencyApiModule } from "./currency-api/currency-api.module"
+import { CurrencyApiModule } from "./apis/currency-api/currency-api.module"
 import { CurrencyConversionService } from "./currency-conversion.service"
 
 @Module({
