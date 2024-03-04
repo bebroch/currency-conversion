@@ -1,10 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import Conversion from "./conversion/conversion";
-import "./assets/styles/global.css";
+import React from "react"
+import ReactDOM from "react-dom/client"
+import "./assets/styles/global.css"
+import App from "./App"
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-        <Conversion />
+        <App />
     </React.StrictMode>,
-);
+)

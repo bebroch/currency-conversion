@@ -1,28 +1,48 @@
-.main {
-    background-color: white;
-    height: 40dvh;
-    width: 40%;
-    min-width: 30em;
-    margin: auto;
-    margin-top: 40px;
-    border-radius: 30px;
+/* .currencyMain {
+    border: 1px solid black;
+
+    width: 50%;
+    min-width: 500px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 10px;
 }
 
-.title {
-    padding: 4px;
-    text-align: center;
+.currencyMain > div {
+    display: grid;
+    place-items: center;
+    padding: 50px;
 }
 
-.title > h1 {
+.currencyMain > div > label {
+    font-size: 20px;
     font-family: cursive;
-    color: #00cccc;
 }
 
-.tableStyle {
+.currencyMain > div > input {
+    font-size: 20px;
+    font-family: cursive;
     width: 100%;
+} */
+
+.numberStyle {
+    border-radius: 8px 0px 0px 8px;
+    height: 40px;
+    width: 50%;
+    font-size: 20px;
+    text-align: right;
 }
 
-.tableStyle > tr > td {
-    border: "1px solid black";
-    text-align: center;
+.numberStyle[type="number"]::-webkit-inner-spin-button,
+.numberStyle[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /* Optional */
+}
+
+.currency {
+    border-radius: 0px 8px 8px 0px;
+    height: 45px;
+    width: 70px;
+    font-size: 20px;
 }
