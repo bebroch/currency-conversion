@@ -1,0 +1,52 @@
+.inputBlock {
+    text-align: center;
+}
+
+.labelValueCurrency {
+    font-size: 30px;
+    font-family: cursive;
+}
+
+.inputWithSectionBlock {
+    display: grid;
+    grid-template-columns: 300px auto;
+}
+
+/* inputValueCurrency */
+
+.inputValueCurrency {
+    font-size: 25px;
+    font-family: cursive;
+    border-radius: 20px 0 0 20px;
+    padding: 10px 0 10px 15px;
+}
+
+/* selectionCurrency */
+
+.selectionCurrency {
+    font-size: 25px;
+    appearance: none;
+    text-align: center;
+    border-radius: 0 20px 20px 0;
+    padding: 0 5px;
+
+    border: 2px solid #999;
+    border-left: none;
+}
+
+.selectionCurrency:hover {
+    border: 2px solid #666;
+    border-left: none;
+}
+
+.selectionCurrency:active {
+    outline: none;
+    border: 2px solid black;
+    border-left: none;
+}
+
+.selectionCurrency:focus {
+    outline: none;
+    border: 2px solid black;
+    border-left: none;
+}

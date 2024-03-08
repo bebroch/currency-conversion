@@ -6,7 +6,7 @@ export type DefaultCurrencyType = {
 }
 
 export type CurrencyType = {
-    fetchUpdate: boolean
-    currency: CurrencyEnum
     count: string
+    currency: CurrencyEnum
+    fetchUpdate: boolean
 }

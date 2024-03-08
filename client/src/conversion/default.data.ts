@@ -8,8 +8,8 @@ export const defaultData = {
         count: "1",
     },
     to: {
-        fetchUpdate: false,
+        fetchUpdate: true,
         currency: CurrencyEnum.RUB,
-        count: "0",
+        count: "",
     },
 } as DefaultCurrencyType
