@@ -12,6 +12,8 @@
   },
   "moduleNameMapper": {
     "@currency-conversion/currency-conversion/(.*)": "<rootDir>/../libs/currency-conversion/src/$1",
-    "@currency-conversion/currency-conversion": "<rootDir>/../libs/currency-conversion/src"
+    "@currency-conversion/currency-conversion": "<rootDir>/../libs/currency-conversion/src",
+    "@cache/cache/(.*)": "<rootDir>/../libs/cache/src/$1",
+    "@cache/cache": "<rootDir>/../libs/cache/src"
   }
 }
