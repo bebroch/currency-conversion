@@ -1,22 +1,21 @@
 import { useState, useEffect } from "react"
 import CurrencyInput from "./components/CurrencyInput/CurrencyInput"
-import { defaultData } from "./default.data"
 import UpdateCurrencyData from "./services/update-currency-data.class"
 import styles from "./Conversion.module.css"
-import { CurrencyEnum } from "../../../common/currency"
 import { DefaultCurrencyType } from "./types/default.types"
+import { CurrencyEnum } from "./types/server.types"
 
 const updateCurrencyData = new UpdateCurrencyData()
 
 export function Conversion() {
     // const [data, setData] = useState(defaultData)
 
-    const [fromValue, setFromValue] = useState(defaultData.from.count)
-    const [fromCurrency, setFromCurrency] = useState(defaultData.from.currency)
+    const [fromValue, setFromValue] = useState("1")
+    const [fromCurrency, setFromCurrency] = useState(CurrencyEnum.USD)
     const [fromFetchData, setFromFetchData] = useState(false)
 
-    const [toValue, setToValue] = useState(defaultData.to.count)
-    const [toCurrency, setToCurrency] = useState(defaultData.to.currency)
+    const [toValue, setToValue] = useState("")
+    const [toCurrency, setToCurrency] = useState(CurrencyEnum.RUB)
     const [toFetchData, setToFetchData] = useState(true)
 
     console.log(

@@ -19,8 +19,7 @@
         "noFallthroughCasesInSwitch": false,
         "paths": {
             "@currency-conversion/currency-conversion": ["libs/currency-conversion/src"],
-            "@currency-conversion/currency-conversion/*": ["libs/currency-conversion/src/*"],
-            "@global-common/*": ["../common/*"]
+            "@currency-conversion/currency-conversion/*": ["libs/currency-conversion/src/*"]
         }
     }
 }

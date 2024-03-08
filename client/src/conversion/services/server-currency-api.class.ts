@@ -1,5 +1,5 @@
 import axios from "axios"
-import { ConvertCurrencyType, CurrencyEnum } from "../../../../common/currency"
+import { ConvertCurrencyType, CurrencyEnum } from "../types/server.types"
 
 export default class CurrencyApi {
     public async getCurrencyConversion({

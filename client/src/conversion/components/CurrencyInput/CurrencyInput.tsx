@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
-import { CurrencyEnum } from "../../../../../common/currency"
 import styles from "./CurrencyInput.module.css"
+import { CurrencyEnum } from "../../types/server.types"
 
 export default function CurrencyInput({
     children,

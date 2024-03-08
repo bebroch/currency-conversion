@@ -1,4 +1,4 @@
-import { CurrencyEnum } from "../../../../common/currency"
+import { CurrencyEnum } from "./server.types"
 
 export type DefaultCurrencyType = {
     from: CurrencyType
