@@ -12,13 +12,7 @@ export class ConversionService {
         toCurrency: CurrencyEnum,
         count?: number,
     ): Promise<ConvertCurrencyType> {
-        console.log(fromCurrency, toCurrency, count, 1)
-        // return {
-        //     fromCurrency: CurrencyEnum.USD,
-        //     toCurrency: CurrencyEnum.RUB,
-        //     currencyCode: "string",
-        //     value: Math.floor(91.3132 * count * 10000) / 10000,
-        // }
+        console.log(fromCurrency, toCurrency, count)
 
         if (!fromCurrency || !toCurrency)
             throw new BadRequestException("Invalid request. None fromCurrency or toCurrency.")
