@@ -1,6 +1,7 @@
+import { CacheModule } from "@cache/cache"
 import { Test, TestingModule } from "@nestjs/testing"
-import { CurrencyApiService } from "./currency-api/currency-api.service"
-import { CurrencyEnum } from "./currency-api/types/currency.enums"
+import { CurrencyApiService } from "./apis/currency-api/currency-api.service"
+import { CurrencyEnum } from "./apis/currency-api/enums/currency.enums"
 import { CurrencyConversionService } from "./currency-conversion.service"
 
 describe("CurrencyConversionService", () => {
@@ -8,6 +9,7 @@ describe("CurrencyConversionService", () => {
 
     beforeEach(async () => {
         const module: TestingModule = await Test.createTestingModule({
+            imports: [CacheModule],
             providers: [
                 CurrencyConversionService,
                 {
@@ -39,12 +41,36 @@ describe("CurrencyConversionService", () => {
         expect(service).toBeDefined()
     })
 
-    it("should be defined", async () => {
-        expect(await service.convert(CurrencyEnum.USD, CurrencyEnum.AED, 2)).toEqual({
+    it("should be equal", async () => {
+        expect(await service.getExchangeRate(CurrencyEnum.USD, CurrencyEnum.AED)).toEqual({
             currencyCode: "USD-AED",
             fromCurrency: "USD",
             toCurrency: "AED",
-            value: 426,
+            value: 213,
+        })
+    })
+
+    it("test cache service", async () => {
+        expect(await service.getExchangeRate(CurrencyEnum.USD, CurrencyEnum.AED)).toEqual({
+            currencyCode: "USD-AED",
+            fromCurrency: "USD",
+            toCurrency: "AED",
+            value: 213,
+        })
+
+        // check console
+        expect(await service.getExchangeRate(CurrencyEnum.USD, CurrencyEnum.AED)).toEqual({
+            currencyCode: "USD-AED",
+            fromCurrency: "USD",
+            toCurrency: "AED",
+            value: 213,
+        })
+
+        expect(await service.getExchangeRate(CurrencyEnum.AED, CurrencyEnum.USD)).toEqual({
+            currencyCode: "AED-USD",
+            fromCurrency: "AED",
+            toCurrency: "USD",
+            value: 213,
         })
     })
 })

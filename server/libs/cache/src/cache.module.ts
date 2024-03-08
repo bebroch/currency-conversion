@@ -3,13 +3,7 @@ import { Module } from "@nestjs/common"
 import { CacheService } from "./cache.service"
 
 @Module({
-    imports: [
-        CacheModuleFromNest.register({
-            store: "redis",
-            host: "currency-conversion-redis",
-            port: 6379,
-        }),
-    ],
+    imports: [CacheModuleFromNest.register()],
     providers: [CacheService],
     exports: [CacheService],
 })

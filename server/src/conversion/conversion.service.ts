@@ -13,23 +13,26 @@ export class ConversionService {
         count?: number,
     ): Promise<ConvertCurrencyType> {
         console.log(fromCurrency, toCurrency, count, 1)
-        return {
-            fromCurrency: CurrencyEnum.USD,
-            toCurrency: CurrencyEnum.RUB,
-            currencyCode: "string",
-            value: Math.floor(91.3132 * count * 10000) / 10000,
-        }
+        // return {
+        //     fromCurrency: CurrencyEnum.USD,
+        //     toCurrency: CurrencyEnum.RUB,
+        //     currencyCode: "string",
+        //     value: Math.floor(91.3132 * count * 10000) / 10000,
+        // }
 
         if (!fromCurrency || !toCurrency)
             throw new BadRequestException("Invalid request. None fromCurrency or toCurrency.")
 
-        const data = await this.currencyConversionService.convert(fromCurrency, toCurrency, count)
+        const data = await this.currencyConversionService.getExchangeRate(fromCurrency, toCurrency)
 
         if (!data)
             throw new InternalServerErrorException(
                 "Error occurred while fetching data from external service.",
             )
 
-        return data
+        return {
+            ...data,
+            value: data.value * count,
+        }
     }
 }
